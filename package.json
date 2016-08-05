@@ -1,0 +1,28 @@
+{
+  "name": "oudyvue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "OudyVue.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oudmane/OudyVue.git"
+  },
+  "keywords": [
+    "oudy",
+    "vue",
+    "oudyvue",
+    "oudmane"
+  ],
+  "author": "Ayoub Oudmane <ayoub@oudmane.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Oudmane/OudyVue/issues"
+  },
+  "homepage": "https://github.com/Oudmane/OudyVue#readme",
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "oudyview": "^1.0.0",
+    "uikit-rtl": "^1.0.0",
+    "vue": "^1.0.26"
+  }
+}
