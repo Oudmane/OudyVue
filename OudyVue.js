@@ -7,18 +7,21 @@ var jQuery = require('jquery'),
                 this.$data = jQuery.extend({}, this.$data, JSON.parse(jQuery(this.$el).attr('vue-data')));
         },
         attached: function () {
-            jQuery(this.$el).find('form[oudyview-confirm]').each(function() {
+            var component = this;
+            jQuery(component.$el).find('form[oudyview-confirm]').each(function() {
                 jQuery(this).data('serialize', jQuery(this).serialize());
             });
             if(require.cache[require.resolveWeak('oudyview')]) {
                 var OudyView = require('oudyview');
-                jQuery(this.$el).find('[oudyview-confirm="reload"]').each(function () {
+                jQuery(component.$el).find('[oudyview-confirm="reload"]').each(function () {
                     OudyView.reloadOnClose = true;
                 });
             }
-            jQuery(this.$el).removeClass('uk-invisible');
-            jQuery(this.$el).find('[data-uk-switcher]').each(function() {
-                jQuery(this).data('switcher').show(jQuery(this).data('switcher').options.active);
+            jQuery(component.$el).removeClass('uk-invisible');
+            setTimeout(function() {
+                jQuery(component.$el).find('[data-uk-switcher]').each(function() {
+                    jQuery(this).data('switcher').show(jQuery(this).data('switcher').options.active);
+                });
             });
             jQuery(window).resize();
         }
@@ -50,9 +53,11 @@ module.exports = {
         })(UIkit);
     },
     component: function(name, component) {
+        return Vue.component(name, this.extend(component));
+    },
+    extend: function(component) {
         if(!component)
             component = {};
-        component = jQuery.extend({}, OudyVue, component);
-        return Vue.component(name, component);
+        return jQuery.extend({}, OudyVue, component);
     }
 };
