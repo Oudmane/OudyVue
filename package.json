@@ -21,8 +21,8 @@
   "homepage": "https://github.com/Oudmane/OudyVue#readme",
   "dependencies": {
     "jquery": "^3.1.0",
-    "oudyview": "^1.0.0",
-    "uikit-rtl": "^1.0.0",
-    "vue": "^1.0.26"
+    "oudyview": "^1.0",
+    "uikit-rtl": "^1.0",
+    "vue": "^1.0"
   }
 }
