@@ -23,7 +23,7 @@ var jQuery = require('jquery'),
             jQuery(window).resize();
         }
     };
-
+Vue.config.devtools = false;
 module.exports = {
     init: function() {
         (function(UI){
