@@ -23,6 +23,7 @@ var jQuery = require('jquery'),
                     jQuery(this).data('switcher').show(jQuery(this).data('switcher').options.active);
                 });
             });
+            UIkit.trigger('domready.uk.dom');
             jQuery(window).resize();
         }
     };
